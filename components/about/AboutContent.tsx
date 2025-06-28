@@ -20,9 +20,9 @@ export default function AboutContent() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="fade-in stagger-1">
-            <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative w-56 h-96 rounded-3xl overflow-hidden shadow-2xl mx-auto">
               <Image
-                src="/placeholder.svg?height=400&width=500"
+                src="/founder.jpg"
                 alt="Founder working with fabrics"
                 fill
                 className="object-cover"
@@ -33,7 +33,7 @@ export default function AboutContent() {
           <div className="space-y-6 fade-in stagger-2">
             <h2 className="font-playfair text-3xl font-bold text-gray-800">A Mother's Vision, A Brand's Mission</h2>
             <p className="text-gray-600 leading-relaxed">
-              Style vs Style was born from a simple yet powerful vision - to bring premium quality fabrics directly to
+              Kishori Collection was born from a simple yet powerful vision - to bring premium quality fabrics directly to
               women who appreciate the finer things in life. What started as a mother's quest to find the perfect
               materials for her family has blossomed into a trusted brand serving hundreds of satisfied customers across
               India.
