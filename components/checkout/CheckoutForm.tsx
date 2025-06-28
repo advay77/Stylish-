@@ -35,11 +35,11 @@ export default function CheckoutForm() {
   }
 
   const generateUPILink = () => {
-    const upiId = "stylevsStyle@upi" // Replace with actual UPI ID
+    const upiId = "6386771480@ptsbi" // Replace with your actual UPI ID
     const amount = state.total
-    const note = `Payment for Style vs Style order`
+    const note = `Payment for Kishori Collections order`
 
-    return `upi://pay?pa=${upiId}&pn=Style vs Style&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`
+    return `upi://pay?pa=${upiId}&pn=Kishori%20Collections&am=${amount}&cu=INR&tn=${encodeURIComponent(note)}`
   }
 
   const handlePlaceOrder = async () => {
@@ -70,20 +70,28 @@ export default function CheckoutForm() {
       // Send email notification (you'll need to implement this)
       // await sendOrderNotification(orderData)
 
-      // Open UPI payment
+      // Open UPI payment intent
       const upiLink = generateUPILink()
       window.open(upiLink, "_blank")
 
-      // Clear cart
-      dispatch({ type: "CLEAR_CART" })
-
-      toast({
-        title: "Order Placed!",
-        description: "Your order has been placed. Complete the payment to confirm.",
-      })
-
-      // You might want to redirect to an order confirmation page
-      // router.push('/order-confirmation')
+      // Ask user if payment is complete
+      const paymentDone = window.confirm("After completing your UPI payment, click OK to confirm your order.")
+      if (paymentDone) {
+        // Clear cart
+        dispatch({ type: "CLEAR_CART" })
+        toast({
+          title: "Order Placed!",
+          description: "Your order has been placed. Thank you for shopping with us!",
+        })
+        // You might want to redirect to an order confirmation page
+        // router.push('/order-confirmation')
+      } else {
+        toast({
+          title: "Payment Not Done",
+          description: "Please complete your UPI payment to place the order.",
+          variant: "destructive",
+        })
+      }
     } catch (error) {
       console.error("Error placing order:", error)
       toast({
@@ -275,10 +283,6 @@ export default function CheckoutForm() {
           >
             {isProcessing ? "Processing..." : `Place Order - ₹${state.total}`}
           </button>
-
-          <p className="text-xs text-gray-500 text-center mt-3">
-            By placing this order, you agree to our Terms & Conditions
-          </p>
         </div>
       </div>
     </div>

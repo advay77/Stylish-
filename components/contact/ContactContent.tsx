@@ -33,7 +33,7 @@ export default function ContactContent() {
     setFormData({ name: "", email: "", subject: "", message: "" })
   }
 
-  const whatsappNumber = "919876543210"
+  const whatsappNumber = "91 6386771480"
   const whatsappMessage = "Hi! I'd like to know more about your fabric collection."
 
   return (
@@ -138,26 +138,26 @@ export default function ContactContent() {
                 {
                   icon: Mail,
                   title: "Email Us",
-                  content: "hello@stylevsStyle.com",
+                  content: "srivastavaanjali513@gmail.com",
                   description: "Send us an email anytime!",
                 },
                 {
                   icon: Phone,
                   title: "Call Us",
-                  content: "+91 98765 43210",
+                  content: "+91 6386771480",
                   description: "Mon-Sat, 9 AM - 7 PM",
                 },
                 {
                   icon: MapPin,
                   title: "Visit Us",
-                  content: "Mumbai, Maharashtra",
+                  content: "Prayagraj, Uttar Pradesh",
                   description: "India",
                 },
                 {
                   icon: Clock,
                   title: "Business Hours",
                   content: "Mon - Sat: 9 AM - 7 PM",
-                  description: "Sunday: Closed",
+                  description: "Open - 24/7 support available",
                 },
               ].map((item, index) => (
                 <motion.div

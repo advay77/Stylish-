@@ -87,22 +87,22 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4 text-violet-200" />
-                <span className="text-violet-200">hello@stylevsStyle.com</span>
+                <span className="text-violet-200">srivastavaanjali513@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-violet-200" />
-                <span className="text-violet-200">+91 98765 43210</span>
+                <span className="text-violet-200">+91 6386771480</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-violet-200" />
-                <span className="text-violet-200">Mumbai, India</span>
+                <span className="text-violet-200">Prayagraj, India</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-violet-800 mt-8 pt-8 text-center">
-          <p className="text-violet-200">© 2024 Style vs Style. All rights reserved. Made with ❤️ for fashion lovers.</p>
+          <p className="text-violet-200">© 2025 Kishori Collections. All rights reserved. Made with ❤️ for fashion lovers.</p>
         </div>
       </div>
     </footer>
