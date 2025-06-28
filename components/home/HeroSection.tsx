@@ -7,6 +7,7 @@ import Image from "next/image"
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-violet-100 via-pink-50 to-violet-50"></div>
 
@@ -71,9 +72,9 @@ export default function HeroSection() {
 
           {/* Right Content - Hero Image */}
           <div className="relative fade-in stagger-2">
-            <div className="relative w-full h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative w-full h-[600px] rounded-3xl overflow-hidden shadow-2xl animate-float-y">
               <Image
-                src="/placeholder.svg?height=600&width=500"
+                src="/Image1.png"
                 alt="Premium fabric collection"
                 fill
                 className="object-cover"
@@ -97,6 +98,14 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes float-y {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-24px); }
+          100% { transform: translateY(0); }
+        }
+      `}</style>
     </section>
   )
 }

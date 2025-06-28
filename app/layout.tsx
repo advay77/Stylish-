@@ -20,9 +20,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Style vs Style - Premium Women's Clothing Materials",
-  description: "Style That Speaks, Fabric That Feels - Discover premium women's clothing materials and fabrics",
-  keywords: "women clothing, fabric, materials, fashion, style",
+  title: "Kishori Collections - Premium Women's Clothing Materials",
+  description: "Kishori Collections: Style That Speaks, Fabric That Feels - Discover premium women's clothing materials and fabrics.",
+  keywords: "kishori collections, women clothing, fabric, materials, fashion, style",
 }
 
 // Remove runtime check for Clerk keys; always wrap with ClerkProvider

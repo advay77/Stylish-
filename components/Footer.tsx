@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -9,10 +10,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-gold-400 rounded-full"></div>
-              <span className="font-playfair text-2xl font-bold">Kishore Collections</span>
+              <Image src="/image.png" alt="Kishori Collections Logo" width={32} height={32} className="w-8 h-8 rounded-full bg-white object-contain" />
+              <span className="font-playfair text-2xl font-bold">Kishori Collections</span>
             </div>
-            <p className="text-violet-200">Premium women's clothing materials from Kishore Collections that speak style and comfort.</p>
+            <p className="text-violet-200">Premium women's clothing materials from Kishori Collections that speak style and comfort.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-violet-200 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />

@@ -5,6 +5,7 @@ import Link from "next/link"
 import { ShoppingBag, Menu, X, Search, Heart, User } from "lucide-react"
 import { useCart } from "@/contexts/CartContext"
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+import Image from "next/image"
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -23,8 +24,15 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-violet-800 to-pink-600 rounded-full"></div>
-            <span className="font-playfair text-2xl font-bold gradient-text">Kishore Collections</span>
+            <Image
+              src="/image.png"
+              alt="Kishori Collections Logo"
+              width={32}
+              height={32}
+              className="w-8 h-8 rounded-full bg-white object-contain"
+              priority
+            />
+            <span className="font-playfair text-2xl font-bold gradient-text">Kishori Collections</span>
           </Link>
 
           {/* Desktop Navigation */}
