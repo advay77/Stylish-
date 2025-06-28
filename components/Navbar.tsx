@@ -24,7 +24,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-gradient-to-r from-violet-800 to-pink-600 rounded-full"></div>
-            <span className="font-playfair text-2xl font-bold gradient-text">Style vs Style</span>
+            <span className="font-playfair text-2xl font-bold gradient-text">Kishore Collections</span>
           </Link>
 
           {/* Desktop Navigation */}

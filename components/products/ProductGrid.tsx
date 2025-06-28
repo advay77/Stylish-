@@ -148,7 +148,13 @@ export default function ProductGrid() {
                 )}
               </div>
 
-              <div className={`${viewMode === "list" ? "flex space-x-2" : "space-y-2"}`}>
+              <div
+                className={
+                  viewMode === "list"
+                    ? "flex flex-row gap-2"
+                    : "flex flex-col gap-2 sm:flex-row sm:gap-2"
+                }
+              >
                 <button
                   onClick={() => addToCart(product)}
                   className="flex-1 bg-violet-800 hover:bg-violet-900 text-white py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center space-x-2"

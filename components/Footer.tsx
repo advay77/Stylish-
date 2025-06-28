@@ -10,9 +10,9 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-r from-pink-400 to-gold-400 rounded-full"></div>
-              <span className="font-playfair text-2xl font-bold">Style vs Style</span>
+              <span className="font-playfair text-2xl font-bold">Kishore Collections</span>
             </div>
-            <p className="text-violet-200">Premium women's clothing materials that speak style and comfort.</p>
+            <p className="text-violet-200">Premium women's clothing materials from Kishore Collections that speak style and comfort.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-violet-200 hover:text-white transition-colors">
                 <Instagram className="w-5 h-5" />

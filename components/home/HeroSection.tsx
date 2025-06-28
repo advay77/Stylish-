@@ -32,13 +32,13 @@ export default function HeroSection() {
               <span className="text-violet-800 font-medium">Premium Quality Fabrics</span>
             </div>
 
-            <h1 className="font-playfair text-5xl lg:text-7xl font-bold mb-6 slide-up stagger-2">
-              <span className="gradient-text">Style That Speaks,</span>
+            <h1 className="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold mb-4 slide-up stagger-2">
+              <span className="gradient-text">Kishori Collections</span>
               <br />
               <span className="text-gray-800">Fabric That Feels</span>
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 slide-up stagger-3">
+            <p className="text-base sm:text-lg text-gray-600 mb-6 max-w-lg mx-auto lg:mx-0 slide-up stagger-3">
               Discover our exquisite collection of premium women's clothing materials. From luxurious silks to
               comfortable cottons, find the perfect fabric for your style.
             </p>
