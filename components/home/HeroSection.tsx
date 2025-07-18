@@ -13,7 +13,7 @@ export default function HeroSection() {
 
       {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-pink-200 rounded-full opacity-60 float"></div>
+        <div className="absolute top-20 left-10 w-20 h-20 bg-pink-200 rounded-full opacity-60 float" style={{ animationDelay: "0s" }}></div>
         <div
           className="absolute top-40 right-20 w-16 h-16 bg-violet-200 rounded-full opacity-60 float"
           style={{ animationDelay: "1s" }}
@@ -72,7 +72,7 @@ export default function HeroSection() {
 
           {/* Right Content - Hero Image */}
           <div className="relative fade-in stagger-2">
-            <div className="relative w-full h-[600px] rounded-3xl overflow-hidden shadow-2xl animate-float-y">
+            <div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl animate-float-y">
               <Image
                 src="/Image1.png"
                 alt="Premium fabric collection"
@@ -89,10 +89,7 @@ export default function HeroSection() {
                 <div className="w-12 h-12 bg-gradient-to-r from-violet-800 to-pink-600 rounded-full flex items-center justify-center">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <div className="font-semibold text-gray-800">Premium Quality</div>
-                  <div className="text-sm text-gray-600">Handpicked Materials</div>
-                </div>
+                
               </div>
             </div>
           </div>
