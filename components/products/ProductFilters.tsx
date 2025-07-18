@@ -3,18 +3,61 @@
 import { useState } from "react"
 import { Filter, X } from "lucide-react"
 
-const categories = ["All Categories", "Silk", "Cotton", "Linen", "Georgette", "Chiffon", "Chanderi"]
-const colors = ["All Colors", "Red", "Blue", "Green", "Yellow", "Pink", "Purple", "Black", "White"]
+const categories = [
+  "All Categories",
+  "Traditional",
+  "Casual",
+  "Party",
+  "Accessories"
+]
+const types = [
+  "All Types",
+  "Saree",
+  "Kurti",
+  "Dress",
+  "Dupatta",
+  "Lehenga",
+  "Blouse",
+  "Suit",
+  "Skirt",
+  "Top",
+  "Pant"
+]
+const colors = [
+  "All Colors",
+  "Red",
+  "Blue",
+  "Green",
+  "Yellow",
+  "Pink",
+  "Purple",
+  "Black",
+  "White",
+  "Orange",
+  "Brown",
+  "Grey",
+  "Beige",
+  "Gold",
+  "Silver",
+  "Multicolor"
+]
 const priceRanges = ["All Prices", "Under ₹1000", "₹1000 - ₹2000", "₹2000 - ₹5000", "Above ₹5000"]
 
-export default function ProductFilters() {
-  const [selectedCategory, setSelectedCategory] = useState("All Categories")
-  const [selectedColor, setSelectedColor] = useState("All Colors")
-  const [selectedPrice, setSelectedPrice] = useState("All Prices")
+export default function ProductFilters({
+  selectedCategory,
+  setSelectedCategory,
+  selectedType,
+  setSelectedType,
+  selectedColor,
+  setSelectedColor,
+  selectedPrice,
+  setSelectedPrice,
+}: any) {
   const [isOpen, setIsOpen] = useState(false)
 
   const clearFilters = () => {
     setSelectedCategory("All Categories")
+    setSelectedType("All Types")
     setSelectedColor("All Colors")
     setSelectedPrice("All Prices")
   }
@@ -48,12 +91,15 @@ export default function ProductFilters() {
             </div>
             <FilterContent
               categories={categories}
+              types={types}
               colors={colors}
               priceRanges={priceRanges}
               selectedCategory={selectedCategory}
+              selectedType={selectedType}
               selectedColor={selectedColor}
               selectedPrice={selectedPrice}
               setSelectedCategory={setSelectedCategory}
+              setSelectedType={setSelectedType}
               setSelectedColor={setSelectedColor}
               setSelectedPrice={setSelectedPrice}
               clearFilters={clearFilters}
@@ -72,12 +118,15 @@ export default function ProductFilters() {
         </div>
         <FilterContent
           categories={categories}
+          types={types}
           colors={colors}
           priceRanges={priceRanges}
           selectedCategory={selectedCategory}
+          selectedType={selectedType}
           selectedColor={selectedColor}
           selectedPrice={selectedPrice}
           setSelectedCategory={setSelectedCategory}
+          setSelectedType={setSelectedType}
           setSelectedColor={setSelectedColor}
           setSelectedPrice={setSelectedPrice}
           clearFilters={clearFilters}
@@ -89,12 +138,15 @@ export default function ProductFilters() {
 
 function FilterContent({
   categories,
+  types,
   colors,
   priceRanges,
   selectedCategory,
+  selectedType,
   selectedColor,
   selectedPrice,
   setSelectedCategory,
+  setSelectedType,
   setSelectedColor,
   setSelectedPrice,
   clearFilters,
@@ -119,7 +171,24 @@ function FilterContent({
           ))}
         </div>
       </div>
-
+      {/* Type Filter */}
+      <div>
+        <h4 className="font-semibold mb-3">Type</h4>
+        <div className="space-y-2">
+          {types.map((type: string) => (
+            <label key={type} className="flex items-center space-x-2 cursor-pointer">
+              <input
+                type="radio"
+                name="type"
+                checked={selectedType === type}
+                onChange={() => setSelectedType(type)}
+                className="text-violet-800 focus:ring-violet-800"
+              />
+              <span className="text-sm">{type}</span>
+            </label>
+          ))}
+        </div>
+      </div>
       {/* Color Filter */}
       <div>
         <h4 className="font-semibold mb-3">Color</h4>
@@ -138,7 +207,6 @@ function FilterContent({
           ))}
         </div>
       </div>
-
       {/* Price Filter */}
       <div>
         <h4 className="font-semibold mb-3">Price Range</h4>

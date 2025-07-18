@@ -1,10 +1,18 @@
+"use client"
+
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import WhatsAppFloat from "@/components/WhatsAppFloat"
 import ProductFilters from "@/components/products/ProductFilters"
 import ProductGrid from "@/components/products/ProductGrid"
+import { useState } from "react"
 
 export default function ProductsPage() {
+  const [selectedCategory, setSelectedCategory] = useState("All Categories")
+  const [selectedType, setSelectedType] = useState("All Types")
+  const [selectedColor, setSelectedColor] = useState("All Colors")
+  const [selectedPrice, setSelectedPrice] = useState("All Prices")
+
   return (
     <main className="min-h-screen">
       <Navbar />
@@ -16,10 +24,24 @@ export default function ProductsPage() {
 
         <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-1">
-            <ProductFilters />
+            <ProductFilters
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+              selectedType={selectedType}
+              setSelectedType={setSelectedType}
+              selectedColor={selectedColor}
+              setSelectedColor={setSelectedColor}
+              selectedPrice={selectedPrice}
+              setSelectedPrice={setSelectedPrice}
+            />
           </div>
           <div className="lg:col-span-3">
-            <ProductGrid />
+            <ProductGrid
+              selectedCategory={selectedCategory}
+              selectedType={selectedType}
+              selectedColor={selectedColor}
+              selectedPrice={selectedPrice}
+            />
           </div>
         </div>
       </div>

@@ -8,11 +8,50 @@ import { useCart } from "@/contexts/CartContext"
 import { useToast } from "@/hooks/use-toast"
 import { products, Product } from "@/lib/products"
 
-export default function ProductGrid() {
+export default function ProductGrid({
+  selectedCategory = "All Categories",
+  selectedType = "All Types",
+  selectedColor = "All Colors",
+  selectedPrice = "All Prices",
+}: any) {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   const [sortBy, setSortBy] = useState("featured")
   const { dispatch } = useCart()
   const { toast } = useToast()
+
+  // Filter products
+  const filteredProducts = products.filter((product) => {
+    // Safe checks for missing fields
+    const category = product.category || ""
+    const color = product.color || ""
+    const price = typeof product.price === "number" ? product.price : 0
+
+    const matchCategory =
+      selectedCategory === "All Categories" || category === selectedCategory
+    // Removed matchType since 'type' does not exist
+    const matchColor = selectedColor === "All Colors" || color === selectedColor
+    let matchPrice = true
+    if (selectedPrice === "Under ₹1000") matchPrice = price < 1000
+    else if (selectedPrice === "₹1000 - ₹2000") matchPrice = price >= 1000 && price <= 2000
+    else if (selectedPrice === "₹2000 - ₹5000") matchPrice = price > 2000 && price <= 5000
+    else if (selectedPrice === "Above ₹5000") matchPrice = price > 5000
+    return matchCategory && matchColor && matchPrice
+  })
+
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    switch (sortBy) {
+      case "price-low":
+        return a.price - b.price
+      case "price-high":
+        return b.price - a.price
+      case "rating":
+        return b.rating - a.rating
+      case "newest":
+        return 0
+      default:
+        return 0
+    }
+  })
 
   // ✅ Typed function
   const addToCart = (product: Product) => {
@@ -34,26 +73,11 @@ export default function ProductGrid() {
     })
   }
 
-  const sortedProducts = [...products].sort((a, b) => {
-    switch (sortBy) {
-      case "price-low":
-        return a.price - b.price
-      case "price-high":
-        return b.price - a.price
-      case "rating":
-        return b.rating - a.rating
-      case "newest":
-        return 0
-      default:
-        return 0
-    }
-  })
-
   return (
     <div>
       {/* Sort & View Controls */}
       <div className="flex items-center justify-between mb-6 fade-in">
-        <div className="text-gray-600">{products.length} products found</div>
+        <div className="text-gray-600">{sortedProducts.length} products found</div>
 
         <div className="flex items-center space-x-4">
           <select
